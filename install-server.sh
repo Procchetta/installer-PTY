@@ -246,18 +246,11 @@ cat > /bin/menu <<- "EOF"
 #!/bin/bash
 while : ; do
 choix=$(whiptail --title "Instalador APPs HP1PAR" --menu "Suba o Baje con las flechas del teclado y seleccione el numero de opcion" 22 50 12 \
-1 " APRS Direwolf Analogo" \
-2 " APRS Direwolf RTL-SDR " \
-3 " APRS Multimon-ng " \
-4 " APRS Ionosphere " \
-5 " MMDVMHost " \
-6 " Dvswitch " \
-7 " YSFReflector " \
-8 " YSF2DMR " \
-9 " Editar WiFi " \
-10 " Reiniciar Raspberry " \
-11 " APAGAR Raspberry " \
-12 " Salir del menu " 3>&1 1>&2 2>&3)
+1 " MMDVMHost " \
+2 " Dvswitch " \
+3 " YSFReflector " \
+4 " YSF2DMR " \
+5 " Salir del menu " 3>&1 1>&2 2>&3)
 exitstatus=$?
 #on recupere ce choix
 #exitstatus=$?
@@ -269,28 +262,14 @@ fi
 # case : action en fonction du choix
 case $choix in
 1)
-menu-dw-analogo;;
-2)
-menu-dw-rtl;;
-3)
-menu-mm-rtl;;
-4)
-menu-ionos;;
-5)
 menu-mmdvm;;
-6)
+2)
 menu-dvs;;
-7)
+3)
 menu-ysf;;
-8)
+4)
 menu-ysf2dmr;;
-9)
-menu-wifi;;
-10)
-sudo reboot ;;
-11)
-menu-apagar;;
-12)
+5)
 break;
 esac
 done
